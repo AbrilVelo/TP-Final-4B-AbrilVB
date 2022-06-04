@@ -20,39 +20,37 @@ public class MovementPlayer : MonoBehaviour
     }
     void Update()
     {
-        if(hasJump == 0)
-        {
-            hasJump = 1;
-        }
+        
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0, 0, movementSpeed);
+            transform.Translate(movementSpeed, 0, 0); 
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0, 0, -movementSpeed);
+            transform.Translate(-movementSpeed, 0, 0);
         }
         if (Input.GetKey(KeyCode.D) && hasJump == maxJumps)
         {
-            transform.Rotate(0, rotationSpeed, 0);
+            //transform.Rotate(0, rotationSpeed, 0);
             transform.position -= new Vector3(0, 0, movementSpeed);
         }
         if (Input.GetKey(KeyCode.A) && hasJump == maxJumps)
         {
-            transform.Rotate(0, -rotationSpeed, 0);
-            transform.position -= new Vector3(0, 0, -movementSpeed);
+           // transform.Rotate(0, -rotationSpeed, 0);
+            transform.position -= new Vector3(0, 0, -movementSpeed); 
         }
         if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             hasJump--;
-
+           
         }
+       
 
     }
         void OnCollisionEnter(Collision col)
         {
-             if (col.gameObject.tag == "ground")
+             if (col.gameObject.tag == "Ground")
         {
                 hasJump = maxJumps;
         }
