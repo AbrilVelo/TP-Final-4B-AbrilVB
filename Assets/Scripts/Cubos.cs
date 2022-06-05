@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class Cubos : MonoBehaviour {
 
-	public GameObject cubo;
-	void Start () {
-		
-	}
+    Rigidbody rb;
+
+    void Start () {
+
+        rb = GetComponent<Rigidbody>();
+    }
 	
-	// Update is called once per frame
+	
 	void Update () {
 		
 	}
+
+    
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Ground")
+       {
+            Destroy(gameObject);
+       }
+        if (col.gameObject.name == "Player")
+        {
+            rb.useGravity = true;
+        }
+
+    }
+    
+   
 }
