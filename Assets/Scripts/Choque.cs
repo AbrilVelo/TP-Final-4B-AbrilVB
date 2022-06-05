@@ -9,6 +9,7 @@ public class Choque : MonoBehaviour
     
     int puntos;
     public Text contador;
+    public Text PerdisteTxt;
 
     void Start()
     {
@@ -18,7 +19,11 @@ public class Choque : MonoBehaviour
 
     void Update()
     {
-
+        if(puntos == 3)
+        {
+            PerdisteTxt.text = "Perdiste";
+            contador.text = "";
+        }
     }
    
     void OnCollisionEnter(Collision col)
@@ -27,7 +32,7 @@ public class Choque : MonoBehaviour
         {
             jugador.transform.position = new Vector3(0, 0, 0);
             puntos++;
-            contador.text = ("points: ") + (puntos -1);
+            contador.text = ("points: ") + (puntos);
 
         }
     }
