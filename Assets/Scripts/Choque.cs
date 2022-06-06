@@ -31,6 +31,7 @@ public class Choque : MonoBehaviour
        if (col.gameObject.tag == "Ground")
         {
             jugador.transform.position = new Vector3(0, 0, 0);
+            jugador.transform.localScale = new Vector3(0, 0, 0);
             puntos++;
             contador.text = ("points: ") + (puntos);
 

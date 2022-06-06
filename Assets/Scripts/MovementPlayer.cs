@@ -20,6 +20,10 @@ public class MovementPlayer : MonoBehaviour
     }
     void Update()
     {
+
+
+        
+
         
         if (Input.GetKey(KeyCode.W))
         {
@@ -29,28 +33,29 @@ public class MovementPlayer : MonoBehaviour
         {
             transform.Translate(-movementSpeed, 0, 0);
         }
-        if (Input.GetKey(KeyCode.D) && hasJump == maxJumps)
+        if (Input.GetKey(KeyCode.D) )
         {
+            // hasJump == maxJumps
             //transform.Rotate(0, rotationSpeed, 0);
             transform.position -= new Vector3(0, 0, movementSpeed);
         }
-        if (Input.GetKey(KeyCode.A) && hasJump == maxJumps)
+        if (Input.GetKey(KeyCode.A))
         {
-           // transform.Rotate(0, -rotationSpeed, 0);
+            //  || hasJump == maxJumps
+            // transform.Rotate(0, -rotationSpeed, 0);
             transform.position -= new Vector3(0, 0, -movementSpeed); 
         }
         if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
             hasJump--;
-           
         }
-       
 
     }
         void OnCollisionEnter(Collision col)
         {
-             if (col.gameObject.tag == "Ground")
+             if (col.gameObject.tag == "Respawn")
         {
                 hasJump = maxJumps;
         }
