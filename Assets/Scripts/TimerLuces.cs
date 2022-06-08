@@ -8,17 +8,7 @@ public class TimerLuces : MonoBehaviour {
  
     // ESTE SCRIPT ES PARA EL TIMER Y EL CAMBIO DE COLOR DE LAS BALDOSAS
     int counter;
-    public GameObject Correcto1;
-    public GameObject Correcto2;
-    public GameObject Correcto3;
-    public GameObject Correcto4;
-    public GameObject Correcto5;
-    public GameObject Correcto6;
-    public GameObject Correcto7;
-    public GameObject Correcto8;
-    public GameObject Correcto9;
-    public GameObject Correcto10;
-
+     
     public Text txtCountdown;
     private Material prendido;
     //public Color Prendido;
