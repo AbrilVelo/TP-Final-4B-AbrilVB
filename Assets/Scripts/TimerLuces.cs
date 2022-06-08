@@ -20,13 +20,13 @@ public class TimerLuces : MonoBehaviour {
     public GameObject Correcto10;
 
     public Text txtCountdown;
-  
-
+    private Material prendido;
+    //public Color Prendido;
 
    
     void Start () {
-        
-        
+
+       // mr = gameObject.GetComponent<Renderer>();
     }
 	
 	void Update () {
@@ -35,6 +35,8 @@ public class TimerLuces : MonoBehaviour {
        
             if (txtCountdown.text == "1")
             {
+            prendido.color = Color.black;
+            //Correcto1.Material.Color
             //Correcto1. //cambiar color
             Debug.Log("Si");
             }
