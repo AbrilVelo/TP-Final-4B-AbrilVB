@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Cubos : MonoBehaviour {
 
+    //ESTE SCRIPT ES PARA LOS CUBOS, SI LOS TOCA EL PLAYER SE ACTIVA LA GRAVEDAD(PARA QUE CAIGAN)
+    // SI TOCAN EL VACÍO, SE ELIMINAN
+
     Rigidbody rb;
 
     void Start () {

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Choque : MonoBehaviour
 {
+    //ESTE SCRIPT ES PARA CUANDO EL JUGADOR SE CAE AL VACÍO: SE REINCIA SU POSICIÓN Y SE CUENTA 1 PUNTO.
+
     public GameObject jugador;
     
     int puntos;
@@ -30,8 +32,9 @@ public class Choque : MonoBehaviour
     {
        if (col.gameObject.tag == "Ground")
         {
-            jugador.transform.position = new Vector3(0, 0, 0);
-           // jugador.transform.localScale = new Vector3(0, 0, 0);
+            jugador.transform.position = new Vector3(0, 0.5F, 0);
+            jugador.transform.localScale = new Vector3(1, 1, 1);
+            jugador.transform.eulerAngles = new Vector3(0, 0, 0);
             puntos++;
             contador.text = ("points: ") + (puntos);
 

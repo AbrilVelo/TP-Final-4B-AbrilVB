@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
+    //ESTE SCRIPT ES PARA EL MOVIMIETNO DEL PLAYER Y SU SALTO.
 
     public float movementSpeed;
     public float rotationSpeed;

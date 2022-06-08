@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class TimerLuces : MonoBehaviour {
  
+    // ESTE SCRIPT ES PARA EL TIMER Y EL CAMBIO DE COLOR DE LAS BALDOSAS
     int counter;
     public GameObject Correcto1;
     public GameObject Correcto2;
@@ -22,54 +23,55 @@ public class TimerLuces : MonoBehaviour {
   
 
 
-    // Use this for initialization
+   
     void Start () {
-        txtCountdown.text = counter.ToString();
-        txtCountdown.text = Mathf.FloorToInt(Time.time).ToString();
+        
+        
     }
 	
-	// Update is called once per frame
 	void Update () {
-        for (counter = 0; counter > 0; counter++)
-        {
-            if (counter == 1)
+        txtCountdown.text = Mathf.FloorToInt(Time.time).ToString();
+
+       
+            if (txtCountdown.text == "1")
             {
-                //Correcto1. //cambiar color
+            //Correcto1. //cambiar color
+            Debug.Log("Si");
             }
-            if (counter == 2)
+            if (txtCountdown.text == "2")
             {
                 //Correcto2
             }
-            if (counter == 3)
+            if (txtCountdown.text == "3")
             {
                 // Correcto3
             }
-            if (counter == 4)
+            if (txtCountdown.text == "4")
             {
                 //   Correcto4
             }
-            if (counter == 5)
+            if (txtCountdown.text == "5")
             {
                 // Correcto5
                 Debug.Log("hola");
             }
-            if (counter == 6)
+            if (txtCountdown.text == "6")
             {
                 // Correcto6
             }
-            if (counter == 7)
+            if (txtCountdown.text == "7")
             {
                 // Correcto7
             }
-            if (counter == 8)
+            if (txtCountdown.text == "8")
             {
                 //Correcto8
             }
-            if (counter == 9)
+            if (txtCountdown.text == "9")
             {
                 //Correcto9
             }
-            if (counter == 10)
+            if (txtCountdown.text == "10")
             {
                 //Correcto10
             }
@@ -77,5 +79,5 @@ public class TimerLuces : MonoBehaviour {
 
         }
             
-                }
+               
 }
