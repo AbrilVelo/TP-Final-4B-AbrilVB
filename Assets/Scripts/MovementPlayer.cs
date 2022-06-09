@@ -76,8 +76,8 @@ public class MovementPlayer : MonoBehaviour
             {
             Debug.Log("Ganaste");
             }
-            if (col.gameObject.tag == "Cubos")
-            {
+            if (col.gameObject.tag == "Cubos" || col.gameObject.tag == "Finish")
+        {
                 hasJump = maxJumps;
                         if (camara.transform.eulerAngles != new Vector3(CamaraX, CamaraY, 0))
             {

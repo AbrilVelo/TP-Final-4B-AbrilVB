@@ -41,65 +41,77 @@ public class TimerLuces : MonoBehaviour {
         c7 = Correcto7.GetComponent<Renderer>(); c8 = Correcto8.GetComponent<Renderer>(); c9 = Correcto9.GetComponent<Renderer>();
         c10 = Correcto10.GetComponent<Renderer>();
 
-        c1.material.SetColor("_Color", prendido);
-
+        // c1.material.SetColor("_Color", prendido);
+        apagado = Color.black;
+        prendido = Color.white;
 
     }
 	
 	void Update () {
         txtCountdown.text = Mathf.FloorToInt(Time.time).ToString();
+        //txtCountdown.text = Time.time.ToString();
 
-       
+        string tm = txtCountdown.text;
 
-       
-         if(txtCountdown.text == "1")
+        if (tm == "1" || tm == "21")
         {
+            c10.material.SetColor("_Color", apagado);
             c1.material.SetColor("_Color", prendido);
             
             }
-            if (txtCountdown.text == "2")
+            if (tm == "2" || tm == "22")
             {
+            c1.material.SetColor("_Color", apagado);
             c2.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "3")
+            if (tm == "3" || tm == "23")
             {
+            c2.material.SetColor("_Color", apagado);
             c3.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "4")
+            if (tm == "4" || tm== "24")
             {
+            c3.material.SetColor("_Color", apagado);
             c4.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "5")
+            if (tm == "5" || tm == "25")
             {
+            c4.material.SetColor("_Color", apagado);
             c5.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "6")
+            if (tm == "6" || tm == "26")
             {
+            c5.material.SetColor("_Color", apagado);
             c6.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "7")
+            if (tm == "7" || tm == "27")
             {
+            c6.material.SetColor("_Color", apagado);
             c7.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "8")
+            if (tm == "8" || tm == "28")
             {
+            c7.material.SetColor("_Color", apagado);
             c8.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "9")
+            if (tm == "9" || tm == "29")
             {
+            c8.material.SetColor("_Color", apagado);
             c9.material.SetColor("_Color", prendido);
         }
-            if (txtCountdown.text == "10")
+            if (tm == "10" || tm == "30")
             {
+            c9.material.SetColor("_Color", apagado);
             c10.material.SetColor("_Color", prendido);
              
         }
-            if(txtCountdown.text == "11")
+        if (tm == "11" || tm == "31")
         {
-            txtCountdown.text = "0";
+           
+            c10.material.SetColor("_Color", apagado);
         }
 
+        }
+
+
     }
-            
-               
-}
