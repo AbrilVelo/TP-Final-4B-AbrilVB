@@ -24,10 +24,14 @@ public class Cubos : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Destruye")
        {
             Destroy(gameObject);
        }
+        if (col.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
         if (col.gameObject.name == "Player")
         {
             rb.useGravity = true;

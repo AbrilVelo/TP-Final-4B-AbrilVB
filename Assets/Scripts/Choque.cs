@@ -8,6 +8,8 @@ public class Choque : MonoBehaviour
     //ESTE SCRIPT ES PARA CUANDO EL JUGADOR SE CAE AL VACÍO: SE REINCIA SU POSICIÓN Y SE CUENTA 1 PUNTO.
 
     public GameObject jugador;
+    public GameObject Bloquecitos;
+    BoxCollider BoxCol;
     public GameObject objectToClone;
     int puntos;
     public Text contador;
@@ -15,16 +17,16 @@ public class Choque : MonoBehaviour
 
     void Start()
     {
-        puntos = 0;
-       
+        puntos = 3;
+        BoxCol = Bloquecitos.GetComponent<BoxCollider>();
     }
 
     void Update()
     {
-        if(puntos == 3)
+        if(puntos == 0)
         {
             PerdisteTxt.text = "Perdiste";
-            contador.text = "";
+            contador.text = ("Vidas: ");
         }
         
     }
@@ -36,34 +38,35 @@ public class Choque : MonoBehaviour
             jugador.transform.position = new Vector3(0, 0.5F, 0);
             jugador.transform.localScale = new Vector3(1, 1, 1);
             jugador.transform.eulerAngles = new Vector3(0, 0, 0);
-            puntos++;
-            contador.text = ("points: ") + (puntos);
-
+            puntos--;
+            contador.text = ("Vidas: ") + (puntos);
+            Bloquecitos.GetComponent<BoxCollider>().enabled = true;
         }
 
-       
-
-        }
-
-     void OnCollisionExit(Collision coll)
-    {
-        if(coll.gameObject.tag == "Respawn") 
+        if (col.gameObject.tag == "Destruye")
         {
-            Debug.Log("PERD");
-                if (jugador.transform.position.y < -1)
-                {
-                
-                int counter = 0;
-                    while (counter < 3)
-                        {
-                    Debug.Log("h");
-                        Instantiate(objectToClone);
-                        counter++;
-                         }
-                }
+            jugador.transform.eulerAngles = new Vector3(0, 0, 0);
+            int counter = 0;
+            while (counter < 6)
+            {
+                Debug.Log("h");
+                Instantiate(objectToClone); 
+                counter++;
+                Bloquecitos.GetComponent<BoxCollider>().enabled = false;
+            }
+           
         }
-       
+
+
     }
 
-
 }
+
+     
+        
+     
+       
+    //}
+
+
+
