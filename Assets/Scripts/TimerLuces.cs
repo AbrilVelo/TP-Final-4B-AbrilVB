@@ -52,7 +52,7 @@ public class TimerLuces : MonoBehaviour {
        
 
        
-            while(txtCountdown.text == "1")
+         if(txtCountdown.text == "1")
         {
             c1.material.SetColor("_Color", prendido);
             
