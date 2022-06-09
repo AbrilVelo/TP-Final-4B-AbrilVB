@@ -8,6 +8,7 @@ public class Cubos : MonoBehaviour {
     // SI TOCAN EL VACÍO, SE ELIMINAN
 
     Rigidbody rb;
+   
 
     void Start () {
 

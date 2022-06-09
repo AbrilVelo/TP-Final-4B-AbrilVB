@@ -10,19 +10,26 @@ public class MovementPlayer : MonoBehaviour
     public float rotationSpeed;
     public float jumpForce;
     public int maxJumps;
+    public GameObject jugador;
+    public GameObject camara;
 
     int hasJump;
     Rigidbody rb;
+    float CamaraY = 90.58401f;
+    float CamaraX = 33.382f;
 
     void Start()
     {
         hasJump = maxJumps;
         rb = GetComponent<Rigidbody>();
+        //float PosicionCorrecta = transform.eulerAngles = new Vector3(0, 0, 0);
+        
     }
     void Update()
     {
 
-
+       
+        
         
 
         
@@ -56,10 +63,29 @@ public class MovementPlayer : MonoBehaviour
     }
         void OnCollisionEnter(Collision col)
         {
-             if (col.gameObject.tag == "Respawn")
-        {
+             if (col.gameObject.tag == "Respawn") 
+             {
                 hasJump = maxJumps;
+                jugador.transform.eulerAngles = new Vector3(0, 0, 0);
+            if (camara.transform.eulerAngles != new Vector3(CamaraX,CamaraY,0))
+            {
+                              camara.transform.eulerAngles = new Vector3(CamaraX, CamaraY, 0);
+                         }
+        }
+            if (col.gameObject.tag == "Finish")
+            {
+            Debug.Log("Ganaste");
+            }
+            if (col.gameObject.tag == "Cubos")
+            {
+                hasJump = maxJumps;
+                        if (camara.transform.eulerAngles != new Vector3(CamaraX, CamaraY, 0))
+            {
+                camara.transform.eulerAngles = new Vector3(CamaraX, CamaraY, 0);
+                        }
         }
     }
+    
+
 
 }
