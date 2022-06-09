@@ -29,6 +29,7 @@ public class TimerLuces : MonoBehaviour {
     public GameObject Correcto9;
     public GameObject Correcto10;
     public Text txtCountdown;
+    public Text PerdisteTxt;
     private Color prendido;
     private Color apagado;
 
@@ -109,6 +110,10 @@ public class TimerLuces : MonoBehaviour {
         {
            
             c10.material.SetColor("_Color", apagado);
+        }
+        if(tm == "40")
+        {
+            PerdisteTxt.text = "Perdiste";
         }
 
         }

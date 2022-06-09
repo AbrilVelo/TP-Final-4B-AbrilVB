@@ -47,10 +47,10 @@ public class Choque : MonoBehaviour
         {
             jugador.transform.eulerAngles = new Vector3(0, 0, 0);
             int counter = 0;
-            while (counter < 6)
+            while (counter < 2)
             {
-                Debug.Log("h");
-                Instantiate(objectToClone); 
+                
+                Instantiate(objectToClone).transform.position = jugador.transform.position;
                 counter++;
                 Bloquecitos.GetComponent<BoxCollider>().enabled = false;
             }

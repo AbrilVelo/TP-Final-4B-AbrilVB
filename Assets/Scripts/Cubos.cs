@@ -32,7 +32,7 @@ public class Cubos : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        if (col.gameObject.name == "Player")
+        if (col.gameObject.name == "Player" || col.gameObject.tag == "Cubos")
         {
             rb.useGravity = true;
         }

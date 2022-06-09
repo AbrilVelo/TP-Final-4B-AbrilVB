@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementPlayer : MonoBehaviour
 {
@@ -74,7 +75,8 @@ public class MovementPlayer : MonoBehaviour
         }
             if (col.gameObject.tag == "Finish")
             {
-            Debug.Log("Ganaste");
+            SceneManager.LoadScene("Ganaste");
+            
             }
             if (col.gameObject.tag == "Cubos" || col.gameObject.tag == "Finish")
         {
