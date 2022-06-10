@@ -28,6 +28,18 @@ public class TimerLuces : MonoBehaviour {
     public GameObject Correcto8;
     public GameObject Correcto9;
     public GameObject Correcto10;
+    //
+    public GameObject CorrectoA;
+    public GameObject CorrectoB;
+    public GameObject CorrectoC;
+    public GameObject CorrectoD;
+    public GameObject CorrectoE;
+    public GameObject CorrectoF;
+    public GameObject CorrectoG;
+    public GameObject CorrectoH;
+    public GameObject CorrectoI;
+    public GameObject CorrectoJ;
+
     public Text txtCountdown;
     public Text PerdisteTxt;
     private Color prendido;
