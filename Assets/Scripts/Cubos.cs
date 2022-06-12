@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cubos : MonoBehaviour {
 
@@ -8,7 +9,8 @@ public class Cubos : MonoBehaviour {
     // SI TOCAN EL VACÍO, SE ELIMINAN
 
     Rigidbody rb;
-   
+    public GameObject cubo;
+    public Text RandomCubos;
 
     void Start () {
 
@@ -24,6 +26,7 @@ public class Cubos : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
+        
         if (col.gameObject.tag == "Destruye")
        {
             Destroy(gameObject);
@@ -32,9 +35,16 @@ public class Cubos : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        if (col.gameObject.name == "Player" || col.gameObject.tag == "Cubos")
+        if (RandomCubos.text == "2")
         {
-            rb.useGravity = true;
+            cubo.AddComponent<Rigidbody>();
+
+            if (col.gameObject.name == "Player" || col.gameObject.tag == "Cubos")
+            {
+                rb.useGravity = true;
+            }
+
+
         }
 
     }

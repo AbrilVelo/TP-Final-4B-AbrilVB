@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CamaraRotacion : MonoBehaviour
 {
+    // ESTE SCRIPT ES PARA QUE EL JUGADOR SOLO EMPIEZE A JUGAR A LOS 10 SEGUNDOS.
     public Text txtCountdown;
     public GameObject empezarjugada;
     BoxCollider Bc;
