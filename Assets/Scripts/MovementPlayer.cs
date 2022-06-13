@@ -23,7 +23,7 @@ public class MovementPlayer : MonoBehaviour
     {
         hasJump = maxJumps;
         rb = GetComponent<Rigidbody>();
-        //float PosicionCorrecta = transform.eulerAngles = new Vector3(0, 0, 0);
+        
         
     }
     void Update()

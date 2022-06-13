@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Choque : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Choque : MonoBehaviour
     {
         if(puntos == 0)
         {
-            PerdisteTxt.text = "Perdiste";
+            SceneManager.LoadScene("Perdiste");
             contador.text = ("Vidas: ");
         }
         
@@ -53,6 +54,7 @@ public class Choque : MonoBehaviour
                 Instantiate(objectToClone).transform.position = jugador.transform.position;
                 counter++;
                 Bloquecitos.GetComponent<BoxCollider>().enabled = false;
+                //Destroy(objectToClone);
             }
            
         }

@@ -17,6 +17,7 @@ public class VolverPrincipal : MonoBehaviour
     {
         
     }
+   
    public void siguiente()
     {
         SceneManager.LoadScene("SampleScene");

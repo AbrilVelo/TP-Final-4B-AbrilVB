@@ -31,9 +31,10 @@ public class TimerLuces : MonoBehaviour {
 
     public Text txtCountdown;public Text RandomCubos; public Text PerdisteTxt;
     private Color prendido;private Color apagado;
-   
-    
-    
+    int camino;
+
+
+
 
 
 
@@ -55,14 +56,15 @@ public class TimerLuces : MonoBehaviour {
         // c1.material.SetColor("_Color", prendido);
         apagado = Color.black;
         prendido = Color.white;
+        camino = Random.Range(2, 3);
     }
 
         void Update() {
             txtCountdown.text = Mathf.FloorToInt(Time.time).ToString();
-            //txtCountdown.text = Time.time.ToString();
-            int camino = Random.Range(1, 2);
+        //txtCountdown.text = Time.time.ToString();
+            
             string tm = txtCountdown.text;
-            //RandomCubos.text = camino.ToString();
+            RandomCubos.text = camino.ToString();
             switch (camino)
             {
 
