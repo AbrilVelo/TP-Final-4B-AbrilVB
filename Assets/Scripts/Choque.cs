@@ -20,11 +20,13 @@ public class Choque : MonoBehaviour
     {
         puntos = 3;
         BoxCol = Bloquecitos.GetComponent<BoxCollider>();
+        
     }
 
     void Update()
     {
-        if(puntos == 0)
+        contador.text = ("Vidas: ") + (puntos);
+        if (puntos == 0)
         {
             SceneManager.LoadScene("Perdiste");
             contador.text = ("Vidas: ");
@@ -40,7 +42,7 @@ public class Choque : MonoBehaviour
             jugador.transform.localScale = new Vector3(1, 1, 1);
             jugador.transform.eulerAngles = new Vector3(0, 0, 0);
             puntos--;
-            contador.text = ("Vidas: ") + (puntos);
+           
             Bloquecitos.GetComponent<BoxCollider>().enabled = true;
         }
 
