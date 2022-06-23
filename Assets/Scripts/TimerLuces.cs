@@ -56,7 +56,7 @@ public class TimerLuces : MonoBehaviour {
         // c1.material.SetColor("_Color", prendido);
         apagado = Color.black;
         prendido = Color.white;
-        camino = Random.Range(2, 3);
+        camino = Random.Range(1, 2);
     }
 
         void Update() {

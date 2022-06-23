@@ -22,10 +22,9 @@ public class Cubos2 : MonoBehaviour
 
     void Update()
     {
+       
 
     }
-
-
 
     void OnCollisionEnter(Collision col)
     {
@@ -38,18 +37,19 @@ public class Cubos2 : MonoBehaviour
         {
             Destroy(gameObject);
         }
-            if(RandomCubos.text == "1")
-            {
+        if (RandomCubos.text == "1")
+        {
             cubo.AddComponent<Rigidbody>();
 
+
             if (col.gameObject.name == "Player" || col.gameObject.tag == "Cubos")
-             {
+            {
                 rb.useGravity = true;
-             }
-            
-            
+            }
+
+        }
             }
     }
 
 
-}
+
